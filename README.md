@@ -18,7 +18,7 @@ Advanced Discord RPC is a custom-built Discord Rich Presence (RPC) client that a
 
 ## Installation
 
-1. Download the release from the repository.
+1. Download the release from the [Release TAB](https://github.com/iseizuu/Advanced-DiscordRPC/releases).
 2. Extract the files to a directory of your choice.
 3. Run the application.
 
