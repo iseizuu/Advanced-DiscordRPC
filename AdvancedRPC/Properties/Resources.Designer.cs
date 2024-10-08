@@ -63,36 +63,6 @@ namespace AdvancedRPC.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _047be3831875c7f0b3dd99afa39a9ff7 {
-            get {
-                object obj = ResourceManager.GetObject("047be3831875c7f0b3dd99afa39a9ff7", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _1349151 {
-            get {
-                object obj = ResourceManager.GetObject("1349151", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap kyoko {
-            get {
-                object obj = ResourceManager.GetObject("kyoko", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap rpc_bg {
             get {
                 object obj = ResourceManager.GetObject("rpc bg", resourceCulture);
