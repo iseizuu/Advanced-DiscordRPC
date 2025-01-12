@@ -16,10 +16,13 @@ class RPCProgam
     static extern IntPtr GetForegroundWindow();
     [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Auto)]
     static extern int GetWindowText(IntPtr hWnd, System.Text.StringBuilder lpString, int nMaxCount);
+
     static DiscordRpcClient client;
     static bool rpcInitialized = false;
     static Timestamps startTime;
     static CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
+    static string currentClientId;
+    static readonly object clientLock = new object();
 
     public static void Init()
     {
@@ -34,108 +37,155 @@ class RPCProgam
         Application.ApplicationExit += (s, e) =>
         {
             cancellationTokenSource.Cancel();
-            client.Deinitialize();
+            DeinitPresence();
         };
     }
 
-    static XmlSettings db = xml.ReadSettings();
+    static void DeinitPresence()
+    {
+        lock (clientLock)
+        {
+            if (client != null && rpcInitialized)
+            {
+                client.Deinitialize();
+                client.Dispose();
+                client = null;
+                rpcInitialized = false;
+            }
+        }
+    }
+
     static void InitializeDiscordRPC()
     {
         try
         {
-            client = new DiscordRpcClient(db.clientId)
+            var settings = xml.ReadSettings();
+            currentClientId = settings.clientId;
+
+            lock (clientLock)
             {
-                Logger = new ConsoleLogger() { Level = LogLevel.Warning }
-            };
-
-            client.OnReady += (sender, e) =>
-            {
-                Console.WriteLine("Discord Rich Presence is ready!");
-                rpcInitialized = true;
-            };
-
-            client.Initialize();
-
-            startTime = Timestamps.Now;
-
-            client.SetPresence(new RichPresence()
-            {
-                Details = "Hello There",
-                State = "Idle",
-                Timestamps = startTime,
-                Assets = new Assets()
+                client = new DiscordRpcClient(currentClientId)
                 {
-                    LargeImageKey = xml.ReadSettings().largeImg,
-                    LargeImageText = "Starting...",
-                }
-            });
-        }
-        catch (Exception ex){
-            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
+                    Logger = new ConsoleLogger() { Level = LogLevel.Warning }
+                };
 
+                client.OnReady += (sender, e) =>
+                {
+                    Console.WriteLine("Discord Rich Presence is ready!");
+                    rpcInitialized = true;
+                };
+
+                client.Initialize();
+                startTime = Timestamps.Now;
+
+                UpdateInitialPresence();
+            }
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"Failed to initialize Discord RPC: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+    }
+
+    static void UpdateInitialPresence()
+    {
+        var settings = xml.ReadSettings();
+        client?.SetPresence(new RichPresence()
+        {
+            Details = "Hello There",
+            State = "Idle",
+            Timestamps = startTime,
+            Assets = new Assets()
+            {
+                LargeImageKey = settings.largeImg,
+                LargeImageText = "Starting...",
+            }
+        });
     }
 
     static void DiscordRPCUpdateLoop()
     {
-        try
+        while (!cancellationTokenSource.Token.IsCancellationRequested)
         {
-            while (!cancellationTokenSource.Token.IsCancellationRequested)
+            try
             {
+                var settings = xml.ReadSettings();
+
+                if (currentClientId != settings.clientId)
+                {
+                    Console.WriteLine("Client ID changed, reinitializing...");
+                    DeinitPresence();
+                    InitializeDiscordRPC();
+                }
+
                 if (rpcInitialized)
                 {
                     string windowTitle = GetActiveWindowTitle();
-                    Console.WriteLine($"Focused window: {windowTitle}");    
-
                     var (cpuUsage, ramUsage, totalRam) = GetSystemInfo();
-                    Console.WriteLine($"CPU Usage: {cpuUsage}%, RAM Usage: {ramUsage}% of {totalRam}GB");
-
                     UpdateDiscordPresence(windowTitle, cpuUsage, ramUsage, totalRam);
                 }
 
                 Thread.Sleep(5000);
             }
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            Console.WriteLine($"Error in RPC loop: {ex.Message}");
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in RPC loop: {ex.Message}");
+                Thread.Sleep(10000);
+            }
         }
     }
 
     static void UpdateDiscordPresence(string windowTitle, float cpuUsage, float ramUsage, float totalRam)
     {
-        DateTime now = DateTime.Now;
-        string deviceDetail = xml.ReadSettings().deviceDetail;
-        string formattedDate = now.ToString("yyyy-MM-dd HH:mm:ss");
+        if (!rpcInitialized || client == null) return;
+
+        try
+        {
+            var settings = xml.ReadSettings();
+            DateTime now = DateTime.Now;
+            string deviceDetail = settings.deviceDetail;
+            string formattedDate = now.ToString("yyyy-MM-dd HH:mm:ss");
+
             client.SetPresence(new RichPresence()
             {
-                Details = xml.ReadSettings().updatePresence == "True" ? "Hello There!" : windowTitle,
-                State = xml.ReadSettings().partyEnable == "True" ? xml.ReadSettings().partyMessage : deviceDetail == "False" ? $"CPU: {cpuUsage}%, RAM: {ramUsage}% of {totalRam}GB" : xml.ReadSettings().partyMessage,
+                Details = settings.updatePresence == "True" ? "Hello There!" : windowTitle.Length > 128 ? windowTitle.Substring(0, 125) + "..." : windowTitle,
+                State = settings.partyEnable == "True" ?
+                settings.partyMessage :
+                    deviceDetail == "False" ? $"CPU: {cpuUsage}%, RAM: {ramUsage}% of {totalRam}GB" :
+                    settings.partyMessage,
                 Timestamps = startTime,
                 Assets = new Assets()
                 {
-                    LargeImageKey = xml.ReadSettings().largeImg,
-                    LargeImageText = xml.ReadSettings().largeImgText,
-                    SmallImageKey = xml.ReadSettings().smallImg,
-                    SmallImageText = xml.ReadSettings().smallImgText
+                    LargeImageKey = settings.largeImg,
+                    LargeImageText = settings.largeImgText,
+                    SmallImageKey = settings.smallImg,
+                    SmallImageText = settings.smallImgText
                 },
-                Party = xml.ReadSettings().partyEnable == "True" ? new Party()
+                Party = settings.partyEnable == "True" ? new Party()
                 {
                     ID = Secrets.CreateFriendlySecret(new Random()),
-                    Size = xml.ReadSettings().partySize,
-                    Max = xml.ReadSettings().partyMax,
+                    Size = settings.partySize,
+                    Max = settings.partyMax,
                     Privacy = Party.PrivacySetting.Public,
-                
                 } : null,
-                Buttons = xml.ReadSettings().button == "True" ? new Button[] { 
-                    new Button() 
-                    { 
-                        Label = string.IsNullOrEmpty(xml.ReadSettings().buttonText) ? formattedDate : xml.ReadSettings().buttonText.Trim(), 
-                        Url = string.IsNullOrEmpty(xml.ReadSettings().buttonLink) ? "https://aizuu.my.id" : xml.ReadSettings().buttonLink 
-                    } 
+                Buttons = settings.button == "True" ? new Button[] {
+                    new Button()
+                    {
+                        Label = string.IsNullOrEmpty(settings.buttonText) ? xml.ReadSettings().partyMessage : settings.buttonText.Trim(),
+                        Url = string.IsNullOrEmpty(settings.buttonLink) ? "https://aizuu.my.id" : settings.buttonLink
+                    },
+                    new Button()
+                    {
+                        Label = string.IsNullOrEmpty(settings.buttonText1) ? formattedDate : settings.buttonText1.Trim(),
+                        Url = string.IsNullOrEmpty(settings.buttonLink1) ? "https://aizuu.my.id" : settings.buttonLink1
+                    }
                 } : null
             });
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error updating presence: {ex.Message}");
+        }
     }
 
     static string GetActiveWindowTitle()

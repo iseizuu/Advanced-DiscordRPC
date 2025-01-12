@@ -60,6 +60,12 @@
             this.buttonText = new System.Windows.Forms.TextBox();
             this.buttonLink = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.buttonLink2 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.partyMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.partySize)).BeginInit();
             this.SuspendLayout();
@@ -70,7 +76,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Blueberry Days", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.LightCoral;
-            this.label1.Location = new System.Drawing.Point(397, 23);
+            this.label1.Location = new System.Drawing.Point(413, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 22);
             this.label1.TabIndex = 0;
@@ -83,7 +89,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Blueberry Days", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.LightCoral;
-            this.label2.Location = new System.Drawing.Point(397, 53);
+            this.label2.Location = new System.Drawing.Point(413, 54);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 22);
             this.label2.TabIndex = 1;
@@ -96,7 +102,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Blueberry Days", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.LightCoral;
-            this.label3.Location = new System.Drawing.Point(397, 108);
+            this.label3.Location = new System.Drawing.Point(413, 109);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 22);
             this.label3.TabIndex = 2;
@@ -108,7 +114,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Blueberry Days", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.LightCoral;
-            this.label4.Location = new System.Drawing.Point(397, 243);
+            this.label4.Location = new System.Drawing.Point(413, 244);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(133, 22);
             this.label4.TabIndex = 4;
@@ -120,7 +126,7 @@
             this.save.Font = new System.Drawing.Font("Blueberry Days", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.save.ForeColor = System.Drawing.Color.LightCoral;
             this.save.Image = global::AdvancedRPC.Properties.Resources.rpc_bg;
-            this.save.Location = new System.Drawing.Point(462, 358);
+            this.save.Location = new System.Drawing.Point(476, 424);
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(213, 30);
             this.save.TabIndex = 5;
@@ -132,7 +138,7 @@
             // 
             this.clientIDTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.clientIDTextBox.Font = new System.Drawing.Font("Aileron Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clientIDTextBox.Location = new System.Drawing.Point(512, 23);
+            this.clientIDTextBox.Location = new System.Drawing.Point(528, 24);
             this.clientIDTextBox.MaxLength = 25;
             this.clientIDTextBox.Name = "clientIDTextBox";
             this.clientIDTextBox.Size = new System.Drawing.Size(176, 23);
@@ -144,7 +150,7 @@
             // 
             this.largeImg.BackColor = System.Drawing.SystemColors.Window;
             this.largeImg.Font = new System.Drawing.Font("Aileron Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.largeImg.Location = new System.Drawing.Point(512, 77);
+            this.largeImg.Location = new System.Drawing.Point(528, 78);
             this.largeImg.MaxLength = 15;
             this.largeImg.Name = "largeImg";
             this.largeImg.Size = new System.Drawing.Size(80, 23);
@@ -155,7 +161,7 @@
             // 
             this.smallImg.BackColor = System.Drawing.SystemColors.Window;
             this.smallImg.Font = new System.Drawing.Font("Aileron Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.smallImg.Location = new System.Drawing.Point(607, 77);
+            this.smallImg.Location = new System.Drawing.Point(623, 78);
             this.smallImg.MaxLength = 15;
             this.smallImg.Name = "smallImg";
             this.smallImg.Size = new System.Drawing.Size(80, 23);
@@ -169,7 +175,7 @@
             this.deviceDetail.BackColor = System.Drawing.Color.Transparent;
             this.deviceDetail.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deviceDetail.ForeColor = System.Drawing.Color.Teal;
-            this.deviceDetail.Location = new System.Drawing.Point(534, 246);
+            this.deviceDetail.Location = new System.Drawing.Point(550, 247);
             this.deviceDetail.Name = "deviceDetail";
             this.deviceDetail.Size = new System.Drawing.Size(169, 21);
             this.deviceDetail.TabIndex = 10;
@@ -183,7 +189,7 @@
             this.presenceUpdate.BackColor = System.Drawing.Color.Transparent;
             this.presenceUpdate.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.presenceUpdate.ForeColor = System.Drawing.Color.Teal;
-            this.presenceUpdate.Location = new System.Drawing.Point(534, 269);
+            this.presenceUpdate.Location = new System.Drawing.Point(550, 270);
             this.presenceUpdate.Name = "presenceUpdate";
             this.presenceUpdate.Size = new System.Drawing.Size(164, 21);
             this.presenceUpdate.TabIndex = 11;
@@ -197,7 +203,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Tai Le", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(694, 29);
+            this.label5.Location = new System.Drawing.Point(710, 30);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 13);
             this.label5.TabIndex = 13;
@@ -209,7 +215,7 @@
             this.partyCheckBox.AutoSize = true;
             this.partyCheckBox.Font = new System.Drawing.Font("Blueberry Days", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.partyCheckBox.ForeColor = System.Drawing.Color.LightCoral;
-            this.partyCheckBox.Location = new System.Drawing.Point(401, 167);
+            this.partyCheckBox.Location = new System.Drawing.Point(417, 168);
             this.partyCheckBox.Name = "partyCheckBox";
             this.partyCheckBox.Size = new System.Drawing.Size(128, 26);
             this.partyCheckBox.TabIndex = 14;
@@ -223,7 +229,7 @@
             this.partyLabel.BackColor = System.Drawing.Color.Transparent;
             this.partyLabel.Font = new System.Drawing.Font("Blueberry Days", 9.749998F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.partyLabel.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.partyLabel.Location = new System.Drawing.Point(524, 196);
+            this.partyLabel.Location = new System.Drawing.Point(540, 197);
             this.partyLabel.Name = "partyLabel";
             this.partyLabel.Size = new System.Drawing.Size(45, 18);
             this.partyLabel.TabIndex = 17;
@@ -235,7 +241,7 @@
             this.partyOf.BackColor = System.Drawing.Color.Transparent;
             this.partyOf.Font = new System.Drawing.Font("Blueberry Days", 9.749998F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.partyOf.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.partyOf.Location = new System.Drawing.Point(624, 196);
+            this.partyOf.Location = new System.Drawing.Point(640, 197);
             this.partyOf.Name = "partyOf";
             this.partyOf.Size = new System.Drawing.Size(22, 18);
             this.partyOf.TabIndex = 18;
@@ -243,8 +249,8 @@
             // 
             // partyInputMessage
             // 
-            this.partyInputMessage.Location = new System.Drawing.Point(590, 223);
-            this.partyInputMessage.MaxLength = 50;
+            this.partyInputMessage.Location = new System.Drawing.Point(606, 224);
+            this.partyInputMessage.MaxLength = 120;
             this.partyInputMessage.Name = "partyInputMessage";
             this.partyInputMessage.Size = new System.Drawing.Size(98, 20);
             this.partyInputMessage.TabIndex = 19;
@@ -256,7 +262,7 @@
             this.partyMessage.BackColor = System.Drawing.Color.Transparent;
             this.partyMessage.Font = new System.Drawing.Font("Blueberry Days", 9.749998F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.partyMessage.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.partyMessage.Location = new System.Drawing.Point(524, 225);
+            this.partyMessage.Location = new System.Drawing.Point(540, 226);
             this.partyMessage.Name = "partyMessage";
             this.partyMessage.Size = new System.Drawing.Size(63, 18);
             this.partyMessage.TabIndex = 20;
@@ -265,7 +271,7 @@
             // partyMax
             // 
             this.partyMax.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.partyMax.Location = new System.Drawing.Point(647, 197);
+            this.partyMax.Location = new System.Drawing.Point(663, 198);
             this.partyMax.Minimum = new decimal(new int[] {
             1,
             0,
@@ -284,7 +290,7 @@
             // 
             this.partySize.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.partySize.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.partySize.Location = new System.Drawing.Point(575, 197);
+            this.partySize.Location = new System.Drawing.Point(591, 198);
             this.partySize.Minimum = new decimal(new int[] {
             1,
             0,
@@ -305,7 +311,7 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.Blue;
-            this.linkLabel1.Location = new System.Drawing.Point(778, 382);
+            this.linkLabel1.Location = new System.Drawing.Point(804, 444);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(51, 13);
             this.linkLabel1.TabIndex = 23;
@@ -319,7 +325,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Blueberry Days", 9.749998F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label8.Location = new System.Drawing.Point(509, 57);
+            this.label8.Location = new System.Drawing.Point(525, 58);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(72, 18);
             this.label8.TabIndex = 26;
@@ -331,7 +337,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Blueberry Days", 9.749998F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label9.Location = new System.Drawing.Point(604, 57);
+            this.label9.Location = new System.Drawing.Point(620, 58);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(69, 18);
             this.label9.TabIndex = 27;
@@ -341,7 +347,7 @@
             // 
             this.smallImgText.BackColor = System.Drawing.SystemColors.Window;
             this.smallImgText.Font = new System.Drawing.Font("Aileron Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.smallImgText.Location = new System.Drawing.Point(512, 138);
+            this.smallImgText.Location = new System.Drawing.Point(528, 139);
             this.smallImgText.MaxLength = 50;
             this.smallImgText.Name = "smallImgText";
             this.smallImgText.Size = new System.Drawing.Size(176, 23);
@@ -352,7 +358,7 @@
             // 
             this.largeImgText.BackColor = System.Drawing.SystemColors.Window;
             this.largeImgText.Font = new System.Drawing.Font("Aileron Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.largeImgText.Location = new System.Drawing.Point(512, 109);
+            this.largeImgText.Location = new System.Drawing.Point(528, 110);
             this.largeImgText.MaxLength = 50;
             this.largeImgText.Name = "largeImgText";
             this.largeImgText.Size = new System.Drawing.Size(175, 23);
@@ -365,7 +371,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Tai Le", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(694, 115);
+            this.label6.Location = new System.Drawing.Point(710, 116);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(96, 13);
             this.label6.TabIndex = 30;
@@ -377,7 +383,7 @@
             this.smallTex.BackColor = System.Drawing.Color.Transparent;
             this.smallTex.Font = new System.Drawing.Font("Microsoft Tai Le", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.smallTex.ForeColor = System.Drawing.Color.Red;
-            this.smallTex.Location = new System.Drawing.Point(694, 144);
+            this.smallTex.Location = new System.Drawing.Point(710, 145);
             this.smallTex.Name = "smallTex";
             this.smallTex.Size = new System.Drawing.Size(95, 13);
             this.smallTex.TabIndex = 31;
@@ -389,7 +395,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Tai Le", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(694, 227);
+            this.label7.Location = new System.Drawing.Point(710, 228);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(145, 26);
             this.label7.TabIndex = 32;
@@ -400,7 +406,7 @@
             this.buttonCheck.AutoSize = true;
             this.buttonCheck.Font = new System.Drawing.Font("Blueberry Days", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCheck.ForeColor = System.Drawing.Color.LightCoral;
-            this.buttonCheck.Location = new System.Drawing.Point(401, 292);
+            this.buttonCheck.Location = new System.Drawing.Point(417, 293);
             this.buttonCheck.Name = "buttonCheck";
             this.buttonCheck.Size = new System.Drawing.Size(87, 26);
             this.buttonCheck.TabIndex = 33;
@@ -414,7 +420,7 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Blueberry Days", 9.749998F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label10.Location = new System.Drawing.Point(524, 296);
+            this.label10.Location = new System.Drawing.Point(540, 297);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(36, 18);
             this.label10.TabIndex = 34;
@@ -424,7 +430,7 @@
             // 
             this.buttonText.BackColor = System.Drawing.SystemColors.Window;
             this.buttonText.Font = new System.Drawing.Font("Aileron Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonText.Location = new System.Drawing.Point(559, 294);
+            this.buttonText.Location = new System.Drawing.Point(575, 295);
             this.buttonText.MaxLength = 32;
             this.buttonText.Name = "buttonText";
             this.buttonText.Size = new System.Drawing.Size(128, 23);
@@ -436,8 +442,8 @@
             // 
             this.buttonLink.BackColor = System.Drawing.SystemColors.Window;
             this.buttonLink.Font = new System.Drawing.Font("Aileron Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLink.Location = new System.Drawing.Point(559, 322);
-            this.buttonLink.MaxLength = 50;
+            this.buttonLink.Location = new System.Drawing.Point(575, 323);
+            this.buttonLink.MaxLength = 0;
             this.buttonLink.Name = "buttonLink";
             this.buttonLink.Size = new System.Drawing.Size(128, 23);
             this.buttonLink.TabIndex = 37;
@@ -449,11 +455,82 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Blueberry Days", 9.749998F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label11.Location = new System.Drawing.Point(524, 324);
+            this.label11.Location = new System.Drawing.Point(540, 325);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(27, 18);
             this.label11.TabIndex = 36;
             this.label11.Text = "Url";
+            // 
+            // buttonLink2
+            // 
+            this.buttonLink2.BackColor = System.Drawing.SystemColors.Window;
+            this.buttonLink2.Font = new System.Drawing.Font("Aileron Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLink2.Location = new System.Drawing.Point(575, 380);
+            this.buttonLink2.MaxLength = 0;
+            this.buttonLink2.Name = "buttonLink2";
+            this.buttonLink2.Size = new System.Drawing.Size(128, 23);
+            this.buttonLink2.TabIndex = 41;
+            this.buttonLink2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Blueberry Days", 9.749998F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label12.Location = new System.Drawing.Point(540, 382);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(27, 18);
+            this.label12.TabIndex = 40;
+            this.label12.Text = "Url";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.Window;
+            this.button2.Font = new System.Drawing.Font("Aileron Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(575, 352);
+            this.button2.MaxLength = 32;
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(128, 23);
+            this.button2.TabIndex = 39;
+            this.button2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.button2.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Blueberry Days", 9.749998F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label13.Location = new System.Drawing.Point(540, 354);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(36, 18);
+            this.label13.TabIndex = 38;
+            this.label13.Text = "Text";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Microsoft Tai Le", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.Red;
+            this.label14.Location = new System.Drawing.Point(710, 315);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(44, 13);
+            this.label14.TabIndex = 42;
+            this.label14.Text = "Button 1";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Microsoft Tai Le", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Red;
+            this.label15.Location = new System.Drawing.Point(710, 371);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(44, 13);
+            this.label15.TabIndex = 43;
+            this.label15.Text = "Button 2";
             // 
             // Form1
             // 
@@ -461,7 +538,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AdvancedRPC.Properties.Resources.rpc_bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(841, 404);
+            this.ClientSize = new System.Drawing.Size(867, 466);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.buttonLink2);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.buttonLink);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.buttonText);
@@ -541,6 +624,12 @@
         private System.Windows.Forms.TextBox buttonText;
         private System.Windows.Forms.TextBox buttonLink;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox buttonLink2;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox button2;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
     }
 }
 

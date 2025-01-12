@@ -426,15 +426,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Advanced RPC"
-        "ProductCode" = "8:{941F0CA0-F6DA-4A6F-A5CF-693A77D6DC0A}"
-        "PackageCode" = "8:{90F9B304-C494-41D1-8DFC-1B828698AE7B}"
+        "ProductCode" = "8:{E13B2EB2-AD5D-4FDF-9FE3-F38E76102669}"
+        "PackageCode" = "8:{63CBF52F-4066-4ABB-AF26-DEAAF04708FB}"
         "UpgradeCode" = "8:{2FFB1824-D0D2-4BFF-B2CB-F9079AD10A00}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:2.0.0"
         "Manufacturer" = "8:iSeizuu"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -962,7 +962,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_F8EAD875DCB44C91BF09A42FFC132206"
             {
-            "SourcePath" = "8:..\\AdvancedRPC\\obj\\Release\\AdvancedRPC.exe"
+            "SourcePath" = "8:..\\AdvancedRPC\\obj\\Debug\\AdvancedRPC.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_32566465C2C54D8EA5B2F62552EF7D8C"

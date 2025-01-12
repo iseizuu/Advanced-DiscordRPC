@@ -26,6 +26,8 @@ namespace AdvancedRPC
             partySize.Value = xml.ReadSettings().partySize;
             buttonText.AppendText(xml.ReadSettings().buttonText);
             buttonLink.AppendText(xml.ReadSettings().buttonLink);
+            button2.AppendText(xml.ReadSettings().buttonText1);
+            buttonLink2.AppendText(xml.ReadSettings().buttonLink1);
             partyShow(xml.ReadSettings().partyEnable == "True");
             buttonShow(xml.ReadSettings().button == "True");
 
@@ -98,7 +100,7 @@ namespace AdvancedRPC
                     MessageBox.Show("Client ID must be a number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                if (clientIDTextBox.Text != xml.ReadSettings().clientId) MessageBox.Show("Client ID has changed. Please restart the application.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (clientIDTextBox.Text != xml.ReadSettings().clientId) MessageBox.Show("Client ID has changed. Please wait a moment", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 settings.clientId = clientIDTextBox.Text;
                 settings.largeImg = largeImg.Text;
@@ -114,6 +116,8 @@ namespace AdvancedRPC
                 settings.button = buttonCheck.Checked.ToString();
                 settings.buttonText = buttonText.Text;
                 settings.buttonLink = buttonLink.Text;
+                settings.buttonText1 = button2.Text;
+                settings.buttonLink1 = buttonLink2.Text;
                 xml.SaveToXml(settings);
                 MessageBox.Show("Settings Saved", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -143,6 +147,8 @@ namespace AdvancedRPC
             if (buttonCheck.Checked.ToString() != currentSettings.button) hasChanges = true;
             if (buttonText.Text != currentSettings.buttonText) hasChanges = true;
             if (buttonLink.Text != currentSettings.buttonLink) hasChanges = true;
+            if (button2.Text != currentSettings.buttonText1) hasChanges = true;
+            if (buttonLink2.Text != currentSettings.buttonLink1) hasChanges = true;
 
             if (!hasChanges)
             {
@@ -187,6 +193,10 @@ namespace AdvancedRPC
             label10.Enabled = value;
             label11.Enabled = value;
             buttonLink.Enabled = value;
+            button2.Enabled = value;
+            label12.Enabled = value;
+            label13.Enabled = value;
+            buttonLink2.Enabled = value;
         }
 
         private void partySize_ValueChanged(object sender, EventArgs e)
@@ -206,6 +216,11 @@ namespace AdvancedRPC
         }
 
         private void buttonText_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged_1(object sender, EventArgs e)
         {
 
         }

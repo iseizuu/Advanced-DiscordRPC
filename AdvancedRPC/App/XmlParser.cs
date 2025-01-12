@@ -56,5 +56,7 @@ namespace XMLReader
         public string button { get; set; }
         public string buttonText { get; set; }
         public string buttonLink { get; set; }
+        public string buttonText1 { get; set; }
+        public string buttonLink1 { get; set; }
     }
 }

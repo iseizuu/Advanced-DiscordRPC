@@ -35,7 +35,9 @@ namespace XMLReader.Helpers
                             new XElement("PartyMessage", "Domain Expansion"),
                             new XElement("Button", "False"),
                             new XElement("ButtonText"),
-                            new XElement("ButtonLink")
+                            new XElement("ButtonLink"),
+                            new XElement("ButtonText1"),
+                            new XElement("ButtonLink1")
                     ))).Save(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "settings.xml"));
 
                 MessageBox.Show("XML file generated. please restart the application", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -57,6 +59,8 @@ namespace XMLReader.Helpers
             string Button = XMLParser.FindByTag("Button", value)[0];
             string ButtonText = XMLParser.FindByTag("ButtonText", value)[0];
             string ButtonLink = XMLParser.FindByTag("ButtonLink", value)[0];
+            string buttonText1 = XMLParser.FindByTag("ButtonText1", value)[0];
+            string buttonLink1 = XMLParser.FindByTag("ButtonLink1", value)[0];
 
             XmlSettings setting = new XmlSettings();
             setting.clientId = ClientId;
@@ -73,6 +77,8 @@ namespace XMLReader.Helpers
             setting.button = Button;
             setting.buttonText = ButtonText;
             setting.buttonLink = ButtonLink;
+            setting.buttonText1 = buttonText1;
+            setting.buttonLink1 = buttonLink1;
             return setting;
         }
 
@@ -95,7 +101,9 @@ namespace XMLReader.Helpers
                         new XElement("PartyMessage", settings.partyMessage),
                         new XElement("Button", settings.button),
                         new XElement("ButtonText", settings.buttonText),
-                        new XElement("ButtonLink", settings.buttonLink)
+                        new XElement("ButtonLink", settings.buttonLink),
+                        new XElement("ButtonText1", settings.buttonText1),
+                        new XElement("ButtonLink1", settings.buttonLink1)
                         )
                     )
                 ).Save(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "settings.xml"));
