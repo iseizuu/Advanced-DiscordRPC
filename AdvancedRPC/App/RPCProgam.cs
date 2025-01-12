@@ -8,7 +8,6 @@ using System.Windows.Forms;
 using System.Management;
 using XMLReader.Helpers;
 using Button = DiscordRPC.Button;
-using XMLReader;
 
 class RPCProgam
 {
@@ -138,7 +137,6 @@ class RPCProgam
     static void UpdateDiscordPresence(string windowTitle, float cpuUsage, float ramUsage, float totalRam)
     {
         if (!rpcInitialized || client == null) return;
-
         try
         {
             var settings = xml.ReadSettings();
@@ -177,7 +175,7 @@ class RPCProgam
                     new Button()
                     {
                         Label = string.IsNullOrEmpty(settings.buttonText1) ? formattedDate : settings.buttonText1.Trim(),
-                        Url = string.IsNullOrEmpty(settings.buttonLink1) ? "https://aizuu.my.id" : settings.buttonLink1
+                        Url = string.IsNullOrEmpty(settings.buttonLink1) ? "https://github.com/iseizuu/" : settings.buttonLink1
                     }
                 } : null
             });
